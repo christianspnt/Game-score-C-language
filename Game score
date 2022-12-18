@@ -1,0 +1,147 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void main(){
+
+   // Division level base on total game score
+   const int first = 300;
+   const int second = 225;
+   const int third = 150;
+   const int forth = 30;
+
+   // Rank level base on average score
+   const int beginner = 10;
+   const int intermediate = 50;
+   const int associate = 75;
+   const int professional = 100;
+
+   char pName[200]; // Player name
+   int pNo, g1S, g2S, g3S, total, g1st, g2st, g3st, ptsGain; // Player no. and Game 1, 2, 3 Score and total game score
+   float aveScore; // Average Score
+
+   printf("Input the Player No: ");
+   scanf("%d",&pNo);
+   printf("Input the Player Name: ");
+   scanf("s",&pName);
+   printf("Input the Game 1 Score | Game 2 Score | Game 3 Score: \n");
+   scanf("%d%d%d",&g1S,&g2S,&g3S);
+
+   printf("\nPlayer No.: %d", pNo);
+   printf("\nPlayer Name: %s", pName);
+   printf("\nGame 1 Score: %d", g1S);
+   printf("\nGame 2 Score: %d", g2S);
+   printf("\nGame 3 Score: %d", g3S);
+
+   total = g1S + g2S + g3S;
+   printf("\nTotal Game Score = %d", total);
+   aveScore = total / 3;
+   printf("\nAverage Score = %.2f", aveScore);
+
+   if(total >= first ){
+    printf("\nDivision: First");
+
+      if(aveScore >= professional){
+        printf("\nRank: Professional\n");
+      }
+
+   }
+
+    else if(total < first & total >= second){
+     printf("\nDivision: Second");
+
+       if(aveScore < professional & aveScore >= associate){
+        printf("\nRank: Associate\n");
+       }
+
+    }
+
+    else if(total < second & total >= third){
+     printf("\nDivision: Third");
+
+       if(aveScore < associate & aveScore >= intermediate){
+        printf("\nRank: Intermediate\n");
+       }
+
+    }
+
+    else{
+        printf("\nDivision: Forth");
+
+        if(aveScore < intermediate & aveScore >= beginner){
+            printf("\nRank: Beginner\n");
+        }
+    }
+
+    system("pause");
+
+    printf("\n\nGame 1 Score: %d",g1S);
+
+    if(g1S == 0){
+        int pst = 0;
+        printf("\nReward Pts Gain: %d pts",pst);
+         g1st = pst;
+    }
+    else if(g1S < 34 & g1S >= 1){
+        int pst = 20;
+        printf("\nReward Pts Gain: %d pts",pst);
+        g1st = pst;
+    }
+    else if(g1S < 70 & g1S >=35){
+        int pst = 35;
+        printf("\nReward Pts Gain: %d pts",pst);
+        g1st = pst;
+    }
+    else if(g1S < 100 & g1S >= 71){
+        int pst = 45;
+        printf("\nReward Pts Gain: %d pts",pst);
+        g1st = pst;
+    }
+
+    printf("\nGame 2 Score: %d",g2S);
+   if(g2S == 0){
+        int pst = 0;
+        printf("\nReward Pts Gain: %d pts",pst);
+        g2st = pst;
+    }
+    else if(g2S < 34 & g2S >= 1){
+        int pst = 20;
+        printf("\nReward Pts Gain: %d pts",pst);
+        g2st = pst;
+    }
+    else if(g2S < 70 & g2S >=35){
+        int pst = 35;
+        printf("\nReward Pts Gain: %d pts",pst);
+        g2st = pst;
+    }
+    else if(g2S < 100 & g2S >= 71){
+        int pst = 45;
+        printf("\nReward Pts Gain: %d pts",pst);
+        g2st = pst;
+    }
+
+    printf("\nGame 3 Score: %d",g3S);
+   if(g3S == 0){
+        int pst = 0;
+        printf("\nReward Pts Gain: %d pts",pst);
+        g3st = pst;
+    }
+    else if(g3S < 34 & g3S >= 1){
+        int pst = 20;
+        printf("\nReward Pts Gain: %d pts",pst);
+        g3st = pst;
+    }
+    else if(g3S < 70 & g3S >=35){
+        int pst = 35;
+        printf("\nReward Pts Gain: %d pts",pst);
+        g3st = pst;
+    }
+    else if(g3S < 100 & g3S >= 71){
+        int pst = 45;
+        printf("\nReward Pts Gain: %d pts",pst);
+        g3st = pst;
+    }
+
+    ptsGain = g1st + g2st + g3st;
+    printf("\nTotal Pts Gain: %d",ptsGain);
+
+}
